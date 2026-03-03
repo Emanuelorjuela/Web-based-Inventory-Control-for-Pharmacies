@@ -1,33 +1,45 @@
-// Importa la función principal que inicializa la aplicación con los datos
+
 import { bootstrap } from "./Services/Bootstrap.js";
 
-// Selección de elementos del DOM que se usarán en la interfaz
+/*
+ Referencias centralizadas al DOM.
+ Se agrupan aquí para evitar múltiples querySelector dispersos
+ y facilitar el paso de dependencias entre módulos.
+*/
 export const dom = {
-    input: document.querySelector(".input"),     
-    input2: document.querySelector(".input2"),    
-    thead: document.querySelector(".thead"),    
-    tbody: document.querySelector(".tbody"),      
-    ceros: document.querySelector(".ceros"),      
-    remover: document.querySelector(".remover"),  
-    quitar: document.querySelector(".quitar"),    
-    exportar: document.querySelector(".exportar"),
-    select: document.querySelector(".select")     
+	input: document.querySelector(".input"),        // Input de carga manual de Excel
+	input2: document.querySelector(".input2"),      // Input para escaneo de códigos de barra
+
+	thead: document.querySelector(".thead"),        // Cabecera de la tabla
+	tbody: document.querySelector(".tbody"),        // Cuerpo de la tabla
+
+	ceros: document.querySelector(".ceros"),        // Filtro de diferencias en cero
+	remover: document.querySelector(".remover"),    // Eliminación de registros repetidos
+	quitar: document.querySelector(".quitar"),      // Limpieza de filtros
+	exportar: document.querySelector(".exportar"),  // Exportación a Excel
+	select: document.querySelector(".select")       // Filtro alfabético
 };
 
-// CARGA MANUAL (uso real en tienda):
-// Cuando el usuario selecciona un archivo Excel desde el input, se lee y se inicializa la app.
-dom.input.addEventListener("change", async (e) => {
-    const file = e.target.files[0];   // Obtiene el archivo seleccionado
-    if (!file) return;                // Si no se selecciona nada, termina
+/*
+ Flujo especial para entorno de demostración / deploy.
+ 
+ En producción (tienda):
+ - El usuario carga manualmente el Excel generado por VOPOS
+   o descargado recientemente desde el sistema.
 
-    // Lee el contenido del archivo Excel usando la librería 'read-excel-file'
-    const contenido = await readXlsxFile(file);
+ En este proyecto visible para reclutadores:
+ - Se carga automáticamente un archivo Excel incluido en el repositorio
+   para evitar descargas manuales y permitir ver el sistema funcionando
+   apenas se abre la aplicación.
+*/
+window.addEventListener("DOMContentLoaded", async () => {
+	// Carga del archivo Excel incluido en el proyecto
+	const response = await fetch("./Src/Multimedia/maestra.xlsx");
+	const blob = await response.blob();
 
-    // Inicializa la aplicación con los datos leídos y los elementos del DOM
-    bootstrap(contenido, dom);
+	// Parseo del Excel a estructura manipulable por la aplicación
+	const contenido = await readXlsxFile(blob);
+
+	// Inicialización del sistema completo
+	bootstrap(contenido, dom);
 });
-
-// Nota sobre la versión interactiva:
-// En la versión interactiva para usuarios, no es necesario que el usuario cargue un Excel.
-// En ese caso, se carga un archivo Excel por defecto incluido en el repositorio y la tabla se renderiza automáticamente.
-
