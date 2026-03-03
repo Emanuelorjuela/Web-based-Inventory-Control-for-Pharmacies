@@ -3,7 +3,7 @@
 **Deploy de versión demostrativa (interactiva para usuarios):** https://inventariofarmacia.netlify.app/
 
 <p align="center">
-  <img src="./Multimedia/icon.png" width="400" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/icon.png" width="400" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 Sistema de conciliación de inventario para retail desarrollado en JavaScript puro, orientado a pequeños y medianos comercios, con foco en farmacias y entornos que trabajan con inventarios basados en archivos Excel y pistolas de códigos de barras.
@@ -34,8 +34,8 @@ Se emplean APIs estándar del navegador para manipulación del DOM, manejo de ev
 
 <p display="flex" align="center">
 
-  <img src="./Multimedia/sheetjs.png" width="265px" alt="SheetJS">
-  <img src="./Multimedia/javascript.png" width="265px" alt="Javascript">
+  <img src="./Src/Multimedia/sheetjs.png" width="265px" alt="SheetJS">
+  <img src="./Src/Multimedia/javascript.png" width="265px" alt="Javascript">
 
 </p>
 
@@ -52,7 +52,7 @@ El flujo general comienza con la carga de la maestra de inventario en formato Ex
 Una vez cargado, el sistema procesa los datos y los renderiza en una tabla HTML enriquecida, agregando columnas adicionales necesarias para la conciliación, como conteo real y diferencia. A partir de este punto, el usuario puede iniciar el conteo físico mediante escaneo de productos con la pistola de códigos de barras.
 
 <p align="center">
-  <img src="./Multimedia/cargarExcel.gif" width="700" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/cargarExcel.gif" width="700" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 ## 7. Gestión de inventario y lógica de negocio
@@ -66,13 +66,13 @@ Cada actualización recalcula automáticamente la diferencia entre el saldo de l
 Ejemplo de CAJA X 50 con unidad de medida TABLETA:
 
 <p align="center">
-  <img src="./Multimedia/cajaxtableta.gif" width="700" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/cajaxtableta.gif" width="700" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 Ejemplo de CAJA X 100 con unidad de medida CAJA:
 
 <p align="center">
-  <img src="./Multimedia/cajaxcaja.gif" width="700" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/cajaxcaja.gif" width="700" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 ## 8. Filtros y herramientas de análisis
@@ -84,7 +84,7 @@ El sistema incorpora filtros específicos pensados para el análisis de inventar
 Este filtro oculta todos los productos cuya diferencia entre el saldo de la maestra y el conteo real es igual a cero. Su objetivo es reducir el ruido visual y permitir que el usuario se concentre únicamente en los productos con inconsistencias reales.
 
 <p align="center">
-  <img src="./Multimedia/filtrarCeros.gif" width="700" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/filtrarCeros.gif" width="700" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 ### Filtro alfabético por descripción
@@ -92,7 +92,7 @@ Este filtro oculta todos los productos cuya diferencia entre el saldo de la maes
 Permite visualizar únicamente los productos cuya descripción comienza con una letra específica. Este filtro resulta útil para búsquedas puntuales o verificaciones dirigidas dentro de inventarios extensos.
 
 <p align="center">
-  <img src="./Multimedia/filtarLetra.gif" width="700" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/filtarLetra.gif" width="700" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 ### Filtro de eliminación de productos duplicados
@@ -100,7 +100,7 @@ Permite visualizar únicamente los productos cuya descripción comienza con una 
 En algunas maestras generadas por el sistema POS es común encontrar productos duplicados que comparten el mismo código interno pero poseen distintos códigos de barras. Este filtro identifica estos casos y conserva el registro que presenta conteo, eliminando aquel que no fue escaneado, evitando duplicados en los resultados finales.
 
 <p align="center">
-  <img src="./Multimedia/removerRepetidos.gif" width="700" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/removerRepetidos.gif" width="700" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 ### Quitar filtros
@@ -108,7 +108,7 @@ En algunas maestras generadas por el sistema POS es común encontrar productos d
 Restaura la visualización original de la tabla, eliminando cualquier filtro activo y devolviendo el inventario a su estado completo.
 
 <p align="center">
-  <img src="./Multimedia/quitarFiltros.gif" width="700" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/quitarFiltros.gif" width="700" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 ## 9. Persistencia, respaldo y exportación
@@ -120,13 +120,13 @@ El formato del archivo exportado mantiene compatibilidad con la maestra original
 Como parte del repositorio se incluye un archivo Excel de ejemplo con aproximadamente 1600 productos, pensado para fines de demostración y practicidad para el usuario. No obstante, el sistema ha sido probado en entornos reales con inventarios de 4000 a 5000 productos, manteniendo un rendimiento estable y tiempos de respuesta adecuados durante el conteo y la aplicación de filtros.
 
 <p align="center">
-  <img src="./Multimedia/descargarExcel.gif" width="700" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/descargarExcel.gif" width="700" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 Ejemplo del excel descargado:
 
 <p align="center">
-  <img src="./Multimedia/excelDescargado.png" width="700" alt="Conteo por escaneo de códigos de barras">
+  <img src="./Src/Multimedia/excelDescargado.png" width="700" alt="Conteo por escaneo de códigos de barras">
 </p>
 
 ## 10. Escalabilidad y proyección
