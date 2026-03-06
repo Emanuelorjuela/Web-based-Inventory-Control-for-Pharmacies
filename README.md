@@ -94,7 +94,7 @@ This filter hides all products whose difference between the master balance and t
 Allows the user to view only products whose description begins with a specific letter. This filter is useful for targeted searches or directed verification within large inventories.
 
 <p align="center">
-  <img src="./Src/Multimedia/filterLetter.gif" width="700" alt="Counting through barcode scanning">
+  <img src="./Src/Multimedia/letterFilter.gif" width="700" alt="Counting through barcode scanning">
 </p>
 
 ### Duplicate product removal filter
