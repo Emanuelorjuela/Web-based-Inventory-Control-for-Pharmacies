@@ -34,7 +34,7 @@ export const dom = {
 */
 window.addEventListener("DOMContentLoaded", async () => {
 	// Carga del archivo Excel incluido en el proyecto
-	const response = await fetch("./Src/Multimedia/maestra.xlsx");
+	const response = await fetch("./Src/Multimedia/Example_Excel.xlsx");
 	const blob = await response.blob();
 
 	// Parseo del Excel a estructura manipulable por la aplicación
