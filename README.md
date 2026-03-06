@@ -1,8 +1,8 @@
 # Web Inventory Control for Pharmacy
 
-**Deploy for real use (in pharmacy):** https://inventariofarmacia.netlify.app/
+**Deploy for real use (in pharmacy):** https://pharmacyinventoryv1.netlify.app/
 
-**Demo version deploy (interactive for users):** https://inventariofarmaciav2.netlify.app/
+**Demo version deploy (interactive for users):** https://pharmacyinventoryv2.netlify.app/
 
 <p align="center">
   <img src="./Src/Multimedia/icon.png" width="400" alt="Counting through barcode scanning">
